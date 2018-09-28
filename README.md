@@ -39,6 +39,7 @@ Request:
 	"username": "customerRegister71@gmail.com",
 	"password": "password745"
 }
+Nota: No enviar token. Quitar la Authorization y el token del header si la tiene.
 
 Response exitoso
 {
@@ -71,9 +72,10 @@ Request:
 	"password": "password745"
 }
 
-Header:
-Key                                value
-Authorization        
+Header: El token es el obtenido en el inicio de sesión
+Clave:Authorization
+Valor:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
 
 Response exitoso
 {
