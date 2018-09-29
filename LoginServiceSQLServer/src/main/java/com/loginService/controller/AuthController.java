@@ -61,8 +61,8 @@ public class AuthController {
         	authenticationResponse.setUser(((UserPrincipal) authentication.getPrincipal()).getUsername());
         }
         HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.set("Access-Control-Expose-Headers", "Authorization");
         responseHeaders.set("Authorization", jwt);
-        //ResponseEntity.o
         
         
         return ResponseEntity.ok().headers(responseHeaders).body(authenticationResponse);

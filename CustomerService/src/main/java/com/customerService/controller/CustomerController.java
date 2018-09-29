@@ -30,17 +30,14 @@ public class CustomerController {
     @PostMapping("/updateCustomer")
     public ResponseEntity<?> registerUser(@Valid @RequestBody CustomerRequest customerRequest) {
         
-    	if(customerRepository.existsByUsername(customerRequest.getUsername())) {
-            return new ResponseEntity(new CustomerResponse(false, "Username is already taken!", null),
-                    HttpStatus.BAD_REQUEST);
-        }
 
         if(customerRepository.existsByEmail(customerRequest.getEmail())) {
             return new ResponseEntity(new CustomerResponse(false, "Email Address already in use!", null),
                     HttpStatus.BAD_REQUEST);
         }
-    	
-    	Customer customer = new Customer(customerRequest.getIdCustomer(), customerRequest.getIdCategory(), customerRequest.getUsername(), customerRequest.getPassword(), customerRequest.getEmail());
+        
+
+    	Customer customer = new Customer(customerRequest.getIdCustomer(), customerRequest.getPassword(), customerRequest.getEmail());
     	customer.setPassword(passwordEncoder.encode(customer.getPassword()));
     	Customer customerUpdated = customerRepository.save(customer);
     	

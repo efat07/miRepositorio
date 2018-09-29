@@ -20,10 +20,10 @@ public class CustomerRequest {
     @NotBlank
     @Size(min = 6, max = 20)
     private String password;
-/*
+
     @NotNull
     @NotBlank
-    private String keyValue;*/
+    private String oldPassword;
     
     public Long getIdCustomer() {
 		return idCustomer;
@@ -64,12 +64,9 @@ public class CustomerRequest {
 	public void setIdCategory(Long idCategory) {
 		this.idCategory = idCategory;
 	}
-/*
-	public String getKeyValue() {
-		return keyValue;
-	}
 
-	public void setKeyValue(String keyValue) {
-		this.keyValue = keyValue;
-	}*/
+	public String getOldPassword() { return this.oldPassword; }
+
+	public void setOldPassword(String oldPassword) { this.oldPassword = oldPassword; }
+
 }

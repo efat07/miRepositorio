@@ -45,6 +45,12 @@ public class Customer {
 		this.email = email;
 	}
 
+	public Customer(Long id, String password, String email) {
+		this.id = id;
+		this.password = password;
+		this.email = email;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -76,14 +82,6 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	/*public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}*/
 
 	public String getEmail() {
 		return email;
